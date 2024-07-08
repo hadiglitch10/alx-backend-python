@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-""" async task 2 """
+""" The basics of async """
 
 from asyncio import run
 from time import time
 
-wait_n = __import__('1-concurrent_coroutines.py').wait_n
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
 def measure_time(n: int, max_delay: int) -> float:
-    """ measure time of function """
+    """ Measure the runtime """
     start = time()
 
     run(wait_n(n, max_delay))
