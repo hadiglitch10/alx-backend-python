@@ -13,8 +13,8 @@ async def measure_runtime() -> float:
     Returns:
         the total exection time required to complete the task
     """
-    startTime = time()
-    task = [async_comprehension for i in range(4)]
+    t_start = time.perf_counter()
+    task = [async_comprehension() for i in range(4)]
     await asyncio.gather(*task)
-    endTime = time()
-    return endTime - startTime
+    t_end = time.perf_counter()
+    return (t_end - t_start)
